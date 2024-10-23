@@ -1,0 +1,167 @@
+<?php
+// Start the output buffering to ensure proper HTML structure
+ob_start();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEMU Home Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css"> <!-- Link your main CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .topbar {
+            background-color: #0056b3;
+            overflow: hidden;
+            padding: 10px 20px;
+            position: relative;
+        }
+        .topbar nav {
+            display: flex;
+            justify-content: space-around;
+            position: relative;
+        }
+        .topbar a {
+            text-decoration: none;
+            color: white;
+            padding: 8px 16px;
+            position: relative;
+        }
+        .topbar a:hover {
+            background-color: #004494;
+            border-radius: 5px;
+        }
+        .management {
+            position: relative; /* Make the management link relative */
+        }
+        .dropdown {
+            display: none; /* Initially hidden */
+            position: absolute;
+            background-color: #0056b3;
+            min-width: 160px;
+            z-index: 1;
+            border-radius: 5px;
+            padding: 10px 0;
+        }
+        .dropdown a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown a:hover {
+            background-color: #007bff;
+        }
+        .management:hover .dropdown { /* Show dropdown when hovering over the parent */
+            display: block;
+        }
+        .main-nav {
+            margin: 20px 0;
+        }
+        .main-nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+        .main-nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            position: relative;
+            width: 100%;
+        }
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>KEMU - Kenya Methodist University</h1>
+</header>
+
+<div class="topbar">
+    <nav>
+        <a href="lecturer_login.php">Staff</a>
+        <a href="student_login.php">Students</a>
+        <a href="about_us.php">About Us</a>
+        <a href="contact_us.php">Contact Us</a>
+        <a href="department_login.php">Departments</a>
+        <a href="management_login.php">Management</a>
+        
+    </nav>
+</div>
+
+<div class="main-nav">
+    <nav>
+        <a href="index.php">Home</a>
+        <a href="login_officer.php">Registrar AA</a>
+        <a href="student_login.php">Students</a>
+    </nav>
+</div>
+
+<div class="container">
+    <h2>Welcome to KEMU</h2>
+    <p>
+        Kenya Methodist University (KEMU) is a premier institution of higher learning committed to excellence in education. 
+        Our mission is to provide quality education and training in various fields of study that meet the needs of our society and contribute to national development.
+    </p>
+
+    <h3>Our Programs</h3>
+    <ul>
+        <li>Bachelor of Science in Information Technology</li>
+        <li>Bachelor of Business Administration</li>
+        <li>Bachelor of Education</li>
+        <li>Diploma in Business Management</li>
+        <li>Master of Science in Project Management</li>
+    </ul>
+
+    <h3>Why Choose KEMU?</h3>
+    <p>
+        At KEMU, we pride ourselves on our qualified faculty, modern facilities, and a vibrant student community.
+        We offer a wide range of programs, flexible learning options, and opportunities for personal and professional growth.
+    </p>
+
+    <h3>Contact Us</h3>
+    <p>
+        For more information about our programs and admissions, please visit our <a href="contact_us.php">Contact Us</a> page.
+    </p>
+</div>
+
+<footer>
+    <p>&copy; <?php echo date("Y"); ?> Kenya Methodist University. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
+
+<?php
+// Flush the output buffer
+ob_end_flush();
+?>
